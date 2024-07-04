@@ -1,0 +1,115 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  padding: 10px 40px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #fefefe;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0 50px 50px;
+  line-height: 1.4;
+  color: black;
+  overflow-x: hidden;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.items {
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  /* transition: transform 0.3s; */
+  /* transform: translate3d(0, -1px, 0); */
+}
+
+.item__body {
+  padding: 25px;
+}
+
+.item__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel__container {
+  transition: 0.3s cubic-bezier(0, 0, 0.01, 0.94);
+  transform: translate3d(0, 0, 0);
+}
+
+.carousel__container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.carousel__item {
+  float: left;
+}
+
+.carousel__next,
+.carousel__prev {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255) url(./public/right-arrow-svgrepo-com.svg)
+    center center no-repeat;
+  background-size: 20px;
+  top: 50%;
+  right: -20px;
+  margin-top: -25px;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.carousel__next:hover,
+.carousel__prev:hover {
+  filter: brightness(1.5);
+}
+
+.carousel__prev {
+  background: rgb(255, 255, 255) url(./public/left-arrow-svgrepo-com.svg) center
+    center no-repeat;
+  background-size: 20px;
+  right: auto;
+  left: -25px;
+}
+
+.carousel__next--hidden[disabled],
+.carousel__prev--hidden[disabled] {
+  opacity: 0.5;
+}
